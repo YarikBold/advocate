@@ -83,21 +83,48 @@
             min-height: 400px;
         }
         .hero-content {
-            flex: 1;
-            min-width: 300px;
-            background-color: #0033ff;
-            color: white;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    display: flex;
+    justify-content: center; /* Центрирует связку фото+текст по горизонтали */
+    align-items: center;    /* Центрирует по вертикали */
+    text-align: left;       /* Сам текст внутри своего блока остается по левому краю */
+    width: 100%;
+}
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             line-height: 1.1;
         }
+        /* Центрируем заголовок и форму записи */
+.registration-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует элементы внутри flex-контейнера */
+    text-align: center;
+    padding: 50px 20px;
+}
+    .messenger-buttons {
+    display: flex;
+    justify-content: center; /* Центрирует кнопки по горизонтали */
+    gap: 20px;
+    margin-top: 30px;
+}
+.advokat-form {
+    max-width: 600px; /* Ограничиваем ширину формы как на скрине */
+    width: 100%;
+    margin: 0 auto; /* Выравнивание по центру страницы */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+    .services-container, .prices-container {
+    max-width: 900px;
+    margin: 0 auto; /* Центрирует весь блок на странице */
+    padding: 0 20px;
+}
 
+.prices-container h2, .prices-container p {
+    text-align: center; /* Центрируем текст заголовков */
+}
         /* 4. СЕКЦИЯ УСЛУГИ (БЕЛЫЙ ФОН) */
         .services-section {
             padding: 100px 0;
@@ -335,6 +362,35 @@
         width: 100%;
     }
 }
+    .form-container {
+    max-width: 650px;
+    margin: 0 auto; /* Центрирует сам блок на странице */
+    text-align: center; /* Центрирует заголовок h2 внутри */
+    padding: 40px 20px;
+}
+
+.form-container h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center; /* Принудительно ставим заголовок по центру */
+}
+
+.advokat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Центрирует поля внутри, если у них не 100% ширина */
+}
+
+.advokat-form input, 
+.advokat-form textarea {
+    width: 100%; /* Растягиваем поля на всю ширину контейнера */
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%; /* Кнопка во всю ширину как на макете */
+}
 /* Адаптивность для мобильных */
 @media (max-width: 600px) {
     .price-item {
@@ -437,23 +493,71 @@
             </div>
         </div>
     </div>
-</section>
-    <section class="form-section" id="contact-form">
-        <div class="form-container">
-            <h2>Записаться на консультацию</h2>
-            <form class="advokat-form">
-                <input type="text" placeholder="Ваше имя" required>
-                <input type="tel" placeholder="Ваш телефон" required>
-                <input type="email" placeholder="Ваш Email">
-                <textarea placeholder="Кратко опишите проблему" rows="4"></textarea>
-                <button type="submit" class="submit-btn">Отправить заявку</button>
-            </form>
-            <div class="messenger-wrap">
-                <a href="#" class="wa">WhatsApp</a>
-                <a href="#" class="tg">Telegram</a>
-            </div>
-        </div>
-    </section>
+<section class="form-section" id="contact">
+    <div class="form-container">
+        <h2>Записаться на консультацию</h2>
+        
+        <form class="advokat-form" action="https://formspree.io/f/твой_код" method="POST">
+            <input type="text" name="name" placeholder="Ваше ФИО" required>
+            <input type="tel" name="phone" placeholder="Ваш телефон" required>
+            <input type="email" name="email" placeholder="Ваш Email">
+            <textarea name="message" placeholder="Кратко опишите вашу проблему" rows="4"></textarea>
+            <button type="submit" class="submit-btn">ОТПРАВИТЬ ДАННЫЕ</button>
+        </form>
 
+        <div class="messenger-wrap">
+            <a href="#" class="msg-link wa">WhatsApp</a>
+            <a href="#" class="msg-link tg">Telegram</a>
+        </div>
+    </div>
+</section>
+    <script>
+  const form = document.querySelector('.advokat-form');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Останавливаем перезагрузку страницы
+    
+    const formData = new FormData(form);
+    const button = form.querySelector('.submit-btn');
+    const originalText = button.textContent;
+    
+    button.textContent = "Отправка...";
+    button.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Если всё успешно, заменяем форму текстом
+        form.innerHTML = `<div style="text-align:center; padding: 40px;">
+                            <h3 style="color: #0033ff;">Спасибо!</h3>
+                            <p>Ваша заявка принята. Я свяжусь с вами в ближайшее время.</p>
+                          </div>`;
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      alert("Ой! Что-то пошло не так. Попробуйте еще раз.");
+      button.textContent = originalText;
+      button.disabled = false;
+    }
+  });
+</script>
+    <footer style="
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 40px; 
+    background-color: #f9f9f9; 
+    color: #999; 
+    font-size: 12px;
+    border-top: 1px solid #eee;
+">
+    <p style="margin: 0;">© 2026 Адвокат Олег Антонов. Все права защищены.</p>
+</footer>
 </body>
 </html>
