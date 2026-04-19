@@ -404,11 +404,21 @@
 }
         /* 7. АДАПТИВНОСТЬ */
         @media (max-width: 768px) {
-            .nav-wrapper { gap: 20px; }
-            .menu-links { display: none; } /* Скрываем меню на мобилках для чистоты */
-            .section-title { font-size: 32px; }
-            .form-container { padding: 30px; }
-        }
+    .nav-wrapper { 
+        flex-direction: column; /* Ставим лого и меню друг под другом */
+        gap: 10px; 
+    }
+    .menu-links { 
+        display: flex; /* Возвращаем видимость */
+        gap: 15px;    /* Уменьшаем расстояние между кнопками */
+        justify-content: center;
+    }
+    .menu-links a {
+        font-size: 12px; /* Уменьшаем шрифт, чтобы всё влезло в экран */
+    }
+    .section-title { font-size: 28px; }
+    .form-container { padding: 20px; }
+}
     </style>
 </head>
 <body>
