@@ -52,11 +52,11 @@
             transition: 0.3s;
         }
         .menu-links a:hover {
-            color: #0033ff;
+            color: #D4AF37; /* Вместо #0033ff */
         }
         .btn-enroll {
-            border: 2px solid #0033ff;
-            color: #0033ff !important;
+            border: 2px solid #4B3621; /* Коричневая рамка */
+            color: #4B3621 !important; /* Коричневый текст */
             padding: 12px 30px;
             text-decoration: none;
             font-size: 14px;
@@ -65,35 +65,104 @@
             transition: 0.3s;
         }
         .btn-enroll:hover {
-            background-color: #0033ff;
-            color: #fff !important;
+            background-color: #D4AF37; /* Золотой фон вместо синего */
+            color: #4B3621 !important; /* Темный текст на золотом фоне */
+            border-color: #D4AF37;
         }
 
         /* 3. HERO СЕКЦИЯ */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            min-height: 80vh;
-        }
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-            background: #f4f4f4 url('photo.jpg') no-repeat center center;
-            background-size: cover;
-            min-height: 400px;
-        }
-        .hero-content {
-    display: flex;
-    justify-content: center; /* Центрирует связку фото+текст по горизонтали */
-    align-items: center;    /* Центрирует по вертикали */
-    text-align: left;       /* Сам текст внутри своего блока остается по левому краю */
+        /* ОБЩАЯ СЕКЦИЯ-СПЛИТ */
+.hero-split {
+    display: flex; /* Выстраивает блоки в ряд */
+    flex-wrap: nowrap; /* Запрещает перенос */
     width: 100%;
+    min-height: 100vh; /* Растягиваем на всю высоту экрана */
+    margin: 0;
+    padding: 0;
 }
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
+
+/* ЛЕВАЯ ПОЛОВИНА С ФОТО */
+.hero-photo-half {
+    flex: 1 1 50%; /* Занимает ровно 50% ширины */
+    width: 50%;
+    overflow: hidden; /* Скрывает лишнее */
+    display: flex;
+    justify-content: center; /* Центрирует фото если оно уже */
+    background-color: #f4f4f4; /* Светлый фон за фото */
+}
+
+/* СТИЛИЗАЦИЯ ИЗОБРАЖЕНИЯ */
+.half-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* КЛЮЧЕВОЕ СВОЙСТВО: Растягивает фото, чтобы оно заполнило блок 50%, сохраняя пропорции и показывая больше тела */
+    object-position: top center; /* Позиционирует фото, чтобы голова всегда была сверху */
+}
+
+/* ПРАВАЯ ПОЛОВИНА С ТЕКСТОМ */
+.hero-content-half {
+    flex: 1 1 50%; /* Занимает ровно 50% ширины */
+    width: 50%;
+    background-color: #4B3621 !important; /* Яркий синий фон */
+    color: #F5F5DC;
+    display: flex;
+    align-items: center; /* Центрирует текст по вертикали */
+    justify-content: flex-start; /* Прижимает текст к левому краю блока */
+    padding: 100px 60px; /* Большие отступы для текста */
+    box-sizing: border-box;
+}
+
+/* Обертка для текста */
+.text-wrapper {
+    max-width: 500px; /* Ограничиваем ширину текста, чтобы он не уходил в край */
+    text-align: left;
+}
+
+/* ЗАГОЛОВОК И ТЕКСТ */
+.hero-content-half h1 {
+    font-size: 56px; /* Крупный шрифт */
+    margin: 0 0 40px 0;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    margin: 0 0 50px 0;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-contacts {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ */
+@media (max-width: 768px) {
+    .hero-split {
+        flex-direction: column; /* Ставим фото над текстом на мобильных */
+    }
+    .hero-photo-half, .hero-content-half {
+        width: 100%; /* Занимают всю ширину */
+        flex: auto;
+    }
+    .hero-photo-half {
+        height: 50vh; /* Фото на пол-экрана на мобильном */
+    }
+    .hero-content-half {
+        padding: 40px 20px; /* Меньше отступы */
+        justify-content: center;
+        text-align: center;
+    }
+    .text-wrapper {
+        text-align: center;
+    }
+    .hero-content-half h1 {
+        font-size: 36px; /* Меньше шрифт */
+        text-align: center;
+    }
+}
         /* Центрируем заголовок и форму записи */
 .registration-section {
     display: flex;
@@ -155,9 +224,10 @@
             margin-top: 60px;
         }
         .btn-blue-main {
-            background-color: #0033ff;
-            color: white !important;
+            background-color: #D4AF37 !important;
+            color: #4B3621 !important;
             padding: 20px 50px;
+            border: none;
             text-decoration: none !important;
             font-weight: 700;
             text-transform: uppercase;
@@ -213,18 +283,30 @@
             font-size: 16px;
             outline: none;
         }
-        .submit-btn {
-            background-color: #0033ff;
-            color: white;
-            padding: 20px;
-            border: none;
-            font-weight: bold;
-            font-size: 18px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-        }
+.submit-btn {
+    /* ИСПРАВЛЕНО: Меняем синий на золотисто-желтый */
+    background-color: #D4AF37; 
+    
+    /* ИСПРАВЛЕНО: На желтом фоне белый текст плохо читается, лучше темно-коричневый */
+    color: #4B3621; 
+    
+    padding: 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    width: 100%; /* Совет: добавь это, чтобы кнопка была во всю ширину формы */
+    border-radius: 5px; /* Небольшое скругление добавит современности */
+}
+
+/* Совет: добавь эффект при наведении, чтобы кнопка «оживала» */
+.submit-btn:hover {
+    background-color: #B8860B; /* Темное золото */
+    transform: translateY(-2px); /* Легкий подъем кнопки */
+}
         .messenger-wrap {
             margin-top: 30px;
             display: flex;
@@ -280,21 +362,19 @@
 /* Эффект при наведении (опционально) */
 .price-item:hover {
     padding-left: 10px;
-    border-bottom-color: #0033ff;
+    border-bottom-color: #D4AF37; /* Золотой вместо синего #0033ff */
 }
     /* ГЛАВНЫЙ КОНТЕЙНЕР */
 .hero-content {
-    background-color: #0033ff;
-    color: white;
-    padding: 80px 60px;
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: center; /* Центрируем всю группу (фото + текст) */
-    gap: 50px; /* Расстояние между фото и текстом */
-    min-height: 450px;
+    background-color: #4B3621; /* Коричневый фон вместо синего #0033ff */
+    color: #F5F5DC; /* Светло-бежевый текст вместо белого */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Прижимаем контент к началу своей половины */
+    padding: 0; /* Убираем падинги, так как секция теперь на весь экран */
+    min-height: 100vh; /* Растягиваем на всю высоту экрана */
 }
-
 /* ФОТОГРАФИЯ */
 .hero-photo {
     width: 280px; 
@@ -434,13 +514,21 @@
         </div>
     </header>
 
-    <section class="hero">
-    <div class="hero-content">
-        <img src="i.jpg" alt="Адвокат Олег Антонов" class="hero-photo">
-        
-        <div class="hero-text-block">
-            <h1>Адвокат<br>Олег Антонов</h1>
-            <p>Профессиональная юридическая помощь в Москве и области.</p>
+    <section class="hero-split">
+    <div class="hero-photo-half">
+        <img src="i.jpg" alt="Адвокат Мицюк Евгений Юрьевич" class="half-img">
+    </div>
+
+    <div class="hero-content-half">
+        <div class="text-wrapper">
+            <h1>Адвокат<br>Мицюк Евгений Юрьевич</h1>
+            <p class="hero-subtitle">
+                Профессиональная юридическая помощь в Липецке. Помогаю решать судебные и досудебные вопросы любой сложности.
+            </p>
+            <div class="hero-contacts">
+                <p>Липецк, 8 931 541 43 47</p> 
+                <p>mittsuk@mail.ru</p>
+            </div>
         </div>
     </div>
 </section>
@@ -567,7 +655,7 @@
     font-size: 12px;
     border-top: 1px solid #eee;
 ">
-    <p style="margin: 0;">© 2026 Адвокат Олег Антонов. Все права защищены.</p>
+    <p style="margin: 0;">© 2026 Мицюк Евгений Юрьевич. Все права защищены.</p>
 </footer>
 </body>
 </html>
