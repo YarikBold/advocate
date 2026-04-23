@@ -616,35 +616,76 @@ section,
 }
     .submit-btn:hover { background-color: var(--accent-gold); color: var(--bg-dark); }
 
-    @media (max-width: 768px) {
-    /* 1. Делаем элементы в шапке друг под другом */
+   @media (max-width: 768px) {
+    /* 1. Исправляем шапку: увеличиваем пространство */
     .header-layout {
         flex-direction: column;
-        padding: 10px;
-        gap: 10px;
+        padding: 15px 10px; /* Больше отступов сверху и снизу */
+        gap: 15px; /* Увеличиваем расстояние между лого и текстом */
         text-align: center;
     }
 
-    /* 2. Уменьшаем размер текста ФИО */
-    .advocate-fullname {
-        font-size: 18px; /* Было 24px */
+    /* Название коллегии на мобильных — разрешаем перенос */
+    .footer-org, .header-top-text {
+        white-space: normal !important; 
+        font-size: 13px !important;
+        line-height: 1.4;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
-    /* 3. Скрываем или уменьшаем навигацию */
+    /* 2. ФИО и Заголовки */
+    .advocate-fullname, h2 {
+        font-size: 24px !important; /* На 18px выглядит слишком мелко */
+        margin-top: 10px;
+    }
+
+    /* 3. Навигация (меню) — делаем кнопки удобными для пальцев */
     .nav-menu {
-        gap: 15px;
-        flex-wrap: wrap; /* Чтобы пункты меню переносились на вторую строку */
+        display: flex;
+        flex-direction: row; /* Оставляем в ряд, но даем больше места */
         justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 15px;
     }
 
     .nav-menu a {
-        font-size: 11px; /* Уменьшаем шрифт ссылок */
+        font-size: 13px; /* 11px почти не читается */
+        padding: 5px 10px;
+        background: rgba(197, 160, 89, 0.1); /* Легкий фон для кнопок меню */
+        border-radius: 4px;
     }
 
-    /* 4. ГЛАВНОЕ: Увеличиваем отступ прокрутки для мобильных */
-    #prices {
-        /* На мобильных шапка станет еще выше из-за того, что элементы встанут в колонку */
-        scroll-margin-top: 220px; 
+    /* 4. Кнопки связи (Телефон и Запись) */
+    .btn-call, .btn-record {
+        width: 100% !important; /* Кнопки на всю ширину экрана */
+        margin: 5px 0;
+        font-size: 16px;
+        padding: 18px !important;
+    }
+
+    /* 5. Секция "ОБ АДВОКАТЕ" — фото теперь над текстом */
+    .about-content {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .about-photo {
+        width: 100%;
+        max-width: 320px;
+        margin-bottom: 25px;
+    }
+
+    .about-text {
+        padding-left: 0 !important; /* Убираем боковой отступ ПК-версии */
+        text-align: center;
+    }
+
+    /* 6. Регулируем отступ прокрутки */
+    #about, #services, #prices {
+        scroll-margin-top: 250px; /* Шапка стала выше, увеличиваем отступ */
     }
 }
     @media (max-width: 1024px) {
