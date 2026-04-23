@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Защита прав военнослужащих | Военный адвокат Мицюк Е.Ю. | Липецк</title>
+    <meta name="description" content="Профессиональная помощь военного адвоката в Липецке. Мицюк Евгений Юрьевич — подполковник юстиции, 15 лет стажа в военной прокуратуре. Защита по уголовным делам, споры по ВВК, выплатам и увольнению.">
+    <meta name="keywords" content="военный адвокат Липецк, Мицюк Евгений Юрьевич, подполковник юстиции, Липецкая областная коллегия адвокатов">
+    <link rel="canonical" href="https://военный-адвокат-липецк.рф/">
+
+    <meta property="og:title" content="Адвокат Мицюк Евгений Юрьевич | Липецк">
+    <meta property="og:description" content="Подполковник юстиции в запасе. 15 лет стажа в военной прокуратуре.">
+    <meta property="og:image" content="i.jpg">
+
+    <link rel="icon" type="image/png" href="favicon-green.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+    <style>
+    /* 1. ПОДКЛЮЧЕНИЕ ШРИФТОВ */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+    :root {
+        --bg-dark: #1E2019;       /* Глубокий оливковый фон */
+        --bg-card: #2B2D24;       /* Фон карточек */
+        --accent-gold: #C5A059;   /* Золото (заголовки/акценты) */
+        --military-green: #5B6346;/* Защитный зеленый (кнопки) */
+        --text-main: #F5F5F5;     /* Светлый текст */
+    }
+
+    /* 2. ОБЩИЕ СТИЛИ */
+    html { scroll-behavior: smooth; }
+    
+    body {
+    margin: 0;
+    /* Устанавливаем цвет фона */
+    background-color: #1E2019; 
+    
+    /* Добавляем картинку на весь сайт */
+    background-image: 
+        linear-gradient(rgba(30, 32, 25, 0.85), rgba(30, 32, 25, 0.85)), /* Затемняющий слой */
+        url('law-background.jpg'); /* Твоя Фемида */
+    
+    background-attachment: fixed; /* Фиксируем фон (параллакс), чтобы он не уезжал при скролле */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 80px;
+    line-height: 1.6;
+}
+
+/* Сделаем все секции прозрачными, чтобы фон просвечивал */
+section, 
+.hero-split, 
+.about-advocate, 
+.services-section, 
+.form-section {
+    background: transparent !important;
+}
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* 3. ШАПКА (ОБНОВЛЕННАЯ: ДВУХУРОВНЕВАЯ И ВЫСОКАЯ) */
+.main-header {
+    /* 1. Делаем фон полупрозрачным (0.85 — степень непрозрачности) */
+    background-color: rgba(28, 33, 22, 0.92);
+    
+    /* 2. Добавляем эффект матового стекла (размытие фона за шапкой) */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    
+    /* 3. Делаем золотистую линию снизу более тусклой, чтобы она не «резала» глаз */
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1); 
+    backdrop-filter: blur(12px); /* Чуть усилили размытие для мягкости */
+}
+
+/* Верхний уровень: Логотип + Инфо + Контакты + Кнопки */
+.header-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    gap: 20px;
+}
+
+/* Логотип (твоя сгенерированная эмблема) */
+
+
+/* Текстовый блок (Коллегия и ФИО) */
+.header-name-info {
+    flex-grow: 1;
+}
+    .header-layout {
+    padding: 10px 0; /* Немного уменьшим внутренние отступы, чтобы логотип влез */
+}
+
+.college-status {
+    display: block;
+    font-size: 13px;
+    color: #c5a059; /* Золотой цвет */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.advocate-fullname {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Контактная информация */
+.header-contacts {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    min-width: 250px;
+}
+
+/* Блок кнопок */
+.header-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Кнопка телефона (Желтая -> Зеленая) */
+.btn-call {
+    background-color: #c5a059; 
+    color: #000 !important; /* Черный текст для контраста на желтом */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-call:hover {
+    background-color: #1a6d34; /* Зеленый при наведении */
+    color: #fff !important;
+}
+
+/* Кнопка Записаться (Прозрачная с рамкой) */
+.btn-appointment {
+    border: 1px solid #c5a059;
+    color: #c5a059 !important;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-appointment:hover {
+    background-color: rgba(197, 160, 89, 0.1);
+}
+
+/* Нижний уровень: Навигация */
+.header-nav {
+    /* Оставляем прозрачность, как мы настроили ранее */
+    background-color: rgba(20, 24, 16, 0.4);
+    padding: 22px 0; /* Оставляем её широкой и солидной */
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s, border-bottom 0.3s; /* Плавный переход */
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent; /* Линия всегда есть, но она прозрачная */
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: #c5a059;
+    border-bottom: 2px solid #c5a059; /* Золотая линия под выбранным пунктом */
+}
+    /* 4. ГЛАВНЫЙ БЛОК (HERO) */
+    .hero-split {
+        display: flex;
+        min-height: 90vh;
+        background-color: var(--bg-dark);
+    }
+
+    .half-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .hero-content-half {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 60px;
+        background-color: var(--bg-dark);
+    }
+
+    .hero-content-half h1 {
+        font-family: 'Playfair Display', serif; /* Классический шрифт */
+        font-size: 52px;
+        color: var(--accent-gold);
+        margin-bottom: 30px;
+        line-height: 1.1;
+    }
+
+    /* 5. УСЛУГИ (КАК НА СКРИНЕ У ЮРИСТОВ) */
+    .services-section {
+    position: relative; /* ВАЖНО для правильного наложения фона */
+    padding: 100px 0;
+    
+}
+    /* ОБЯЗАТЕЛЬНО СДЕЛАЙ ВЕСЬ ТЕКСТ ВНУТРИ СВЕТЛЫМ, ЧТОБЫ ЕГО БЫЛО ВИДНО */
+.services-section h2, 
+.services-section p, 
+.services-section li {
+    color: var(--text-main); /* #F5F5F5 */
+}
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        text-align: center;
+        font-size: 42px;
+        color: var(--accent-gold);
+        margin-bottom: 60px;
+    }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+    .service-item {
+        padding: 40px;
+        border-radius: 8px;
+        border-left: 4px solid var(--military-green); /* Тот самый военный акцент */
+        transition: 0.3s;
+    }
+
+    .service-item:hover { transform: translateY(-5px); border-left-color: var(--accent-gold); }
+
+    .service-item h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        color: var(--accent-gold);
+        margin-top: 0;
+    }
+
+    /* 6. ЦЕНЫ (СТРОГИЙ СПИСОК) */
+    .price-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--military-green);
+    }
+
+    .price-name { font-size: 18px; font-weight: 400; }
+    .price-value { font-weight: 700; color: var(--accent-gold); }
+
+    /* 7. ФОРМА ЗАПИСИ */
+    .form-section {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует всё содержимое по горизонтали */
+}
+
+    .advokat-form input, 
+.advokat-form textarea {
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не ломал ширину */
+    padding: 18px;
+    border: 1px solid var(--military-green); /* Граница защитного цвета */
+    border-radius: 4px;
+    background-color: transparent; /* Оставляем темный фон сайта */
+    color: var(--text-main); /* Текст светлый */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+    /* Кнопка ОТПРАВИТЬ ДАННЫЕ (Новое золото!) */
+.advokat-form .submit-btn {
+    background-color: var(--accent-gold); /* Золото с иконки! */
+    color: var(--bg-dark); /* Темный текст на золотом */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 18px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.advokat-form .submit-btn:hover {
+    background-color: var(--military-green);
+    color: white;
+}
+    .about-advocate {
+    position: relative;
+    padding: 120px 0;
+    background-color: var(--bg-dark); /* Базовый темный слой */
+    overflow: hidden;
+}
+
+/* Слой с затуманенной статуей */
+/* Слой с затуманенной статуей (Фемида) */
+
+/* Контент поверх фона */
+.about-content {
+    position: relative;
+    z-index: 10; /* Текст и фото ПОВЕРХ фона */
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+
+/* Фото адвоката с эффектом рамки как на скрине */
+/* Увеличенное фото адвоката */
+.about-photo {
+    position: relative;
+    flex: 0 0 520px; /* Масштаб увеличен как ты просил */
+}
+    #about {
+    /* Добавляем внутренний отступ сверху всей секции */
+    /* Значение 160px-180px обычно хватает, чтобы компенсировать высоту шапки */
+    padding-top: 170px; 
+}
+.about-photo img {
+    width: auto;
+    max-height: 550px;
+    display: block;
+    border-radius: 4px;
+    filter: contrast(1.1);
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5); /* Глубокая тень для объема */
+}
+
+.photo-frame {
+    position: absolute;
+    top: -20px; /* Рамка чуть дальше от фото */
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-gold); /* Сделали линию четче */
+    z-index: 1;
+}
+    #prices {
+    scroll-margin-top: 160px; /* Это создаст невидимый барьер сверху */
+}
+/* Текстовый блок */
+.subtitle {
+    display: block;
+    color: var(--accent-gold);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+    .advocate-description {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    max-width: 650px;
+    flex: 1;
+}
+
+.about-text h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-gold);
+    margin-top: 15px;
+}
+
+.about-text p {
+    color: rgba(245, 245, 245, 0.8);
+    line-height: 1.8;
+    font-size: 18px;
+    /* Убирает лишние ограничения по ширине, если они были у параграфа */
+    width: 100%; 
+}
+/* БЛОК МЕССЕНДЖЕРОВ (ЦЕНТРИРОВАНИЕ) */
+.messenger-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    gap: 15px;
+}
+
+    .submit-btn {
+        background-color: var(--military-green);
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        padding: 20px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: uppercase;
+    }
+    .form-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--accent-gold);
+    margin-bottom: 50px;
+    text-align: center;
+}
+    /* Контейнер для центрирования кнопки */
+.button-center-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Отступ от карточек */
+    margin-bottom: 60px;
+}
+/* 1. ОБЩИЕ ОТСТУПЫ */
+.hero-split, .about-advocate, .services-section, .experience-section, .prices-section {
+    position: relative;
+    padding-bottom: 80px !important;
+}
+
+/* 2. ЛИНИИ ДЛЯ ВСЕХ ВЕРХНИХ БЛОКОВ (кроме цен) */
+.hero-split::after, .about-advocate::after, .services-section::after, .experience-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, rgba(197,160,89,0), rgba(197,160,89,1), rgba(197,160,89,0));
+    box-shadow: 0 0 15px rgba(197,160,89,0.5);
+    z-index: 10;
+}
+
+/* 1. Настройка секции формы */
+.form-section {
+    position: relative;
+    /* Увеличиваем отступ сверху, чтобы создать пространство для линии посередине */
+    padding-top: 120px !important; 
+}
+
+/* 2. Линия строго посередине */
+.form-section::before {
+    content: '';
+    position: absolute;
+    
+    /* Размещаем ровно по центру между блоками */
+    top: 60px; /* Половина от padding-top секции */
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    
+    /* Твой золотой градиент */
+    background: linear-gradient(to right, 
+        rgba(197, 160, 89, 0) 0%, 
+        rgba(197, 160, 89, 0.8) 20%, 
+        rgba(197, 160, 89, 1) 50%, 
+        rgba(197, 160, 89, 0.8) 80%, 
+        rgba(197, 160, 89, 0) 100%
+    );
+    
+    /* Свечение */
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+    z-index: 10;
+    
+    /* Центрирование самой линии */
+    transform: translateY(-50%);
+}
+
+/* 3. Убедимся, что у цен нет лишнего нижнего отступа, который сбивает центр */
+.prices-section {
+    position: relative;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+    .service-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left; /* Текст услуг лучше выровнять по левому краю для читаемости */
+}
+
+.service-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.service-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #c5a059; /* Твой золотой цвет акцента */
+    font-weight: bold;
+}
+
+.service-list li strong {
+    color: #c5a059;
+    display: block; /* Заголовки услуг внутри списка с новой строки */
+    margin-bottom: 2px;
+}
+/* Стили самой кнопки */
+.btn-order {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--accent-gold); /* Золотой цвет из палитры */
+    color: var(--bg-dark); /* Темный текст */
+    padding: 15px 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: 0.3s all ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-order:hover {
+    background-color: var(--military-green);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ОБЕРТКА ДЛЯ ФОРМЫ И МЕССЕНДЖЕРОВ */
+.registration-container {
+    max-width: 600px; /* Сужаем как на 1-м скрине */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* САМА ФОРМА (ИСПРАВЛЕНО: КОЛОНКА, А НЕ РЯД) */
+.advokat-form {
+    display: flex;
+    flex-direction: column; /* Элементы строго друг под другом */
+    gap: 15px; /* Отступ между полями */
+    width: 100%;
+}
+    /* Ссылки-кнопки мессенджеров (как на image_ebc085.png) */
+.messenger-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.wa, .tg {
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 50px; /* Овальная форма как на скрине */
+    transition: 0.3s;
+    display: inline-block;
+}
+
+/* WhatsApp - зеленый */
+.wa {
+    background-color: #25D366;
+    color: #ffffff !important;
+}
+    .tg {
+    background-color: #0088cc;
+    color: #ffffff !important;
+}
+
+.wa:hover, .tg:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+    .submit-btn:hover { background-color: var(--accent-gold); color: var(--bg-dark); }
+
+   /* Стили только для мобильных (до 768px) */
+@media (max-width: 768px) {
+    .header {
+        position: fixed; /* Фиксируем только тут */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #1c2116; /* Тёмно-оливковый фон для читаемости */
+        box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+        padding: 5px 0; /* Делаем её максимально узкой */
+    }
+
+    /* Добавляем отступ для контента, чтобы он не "нырял" под шапку */
+    body {
+        padding-top: 150px; /* Подбери это значение под реальную высоту шапки */
+    }
+
+    /* Делаем элементы внутри шапки еще компактнее */
+    .header-layout {
+        gap: 2px !important;
+    }
+
+    .advocate-fullname {
+        font-size: 19px !important;
+        margin: 2px 0 !important;
+    }
+
+    /* Уменьшаем иконки и текст адреса/телефона */
+    .header-top-text, .header-contacts {
+        font-size: 11px !important;
+        opacity: 0.9;
+    }
+
+    /* Кнопки "Позвонить" и "Записаться" в одну линию */
+    .header-buttons {
+        display: flex;
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    .btn-call, .btn-record {
+        flex: 1;
+        padding: 10px 5px !important;
+        font-size: 12px !important;
+    }
+}
+    /* Основной фон футера — как в оливковой шапке */
+.main-footer {
+    background-color: #1c2116; 
+    color: #fff;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+/* Золотая линия-разделитель сверху */
+.footer-divider {
+    height: 1px;
+    background: var(--accent-gold);
+    opacity: 0.3;
+    margin-bottom: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-block {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-block h3 {
+    /* Playfair Display — классический «мягкий» и премиальный шрифт */
+    font-family: 'Playfair Display', serif; 
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 1px; /* Слегка раздвинем буквы для легкости */
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+}
+
+/* Линии под названиями блоков */
+.block-line {
+    width: 40px;
+    height: 2px;
+    background: var(--accent-gold);
+    margin-bottom: 20px;
+}
+
+/* Акцентные ссылки (номер и почта) */
+.footer-link-accent {
+    display: block;
+    color: var(--accent-gold); /* Тот самый желтый оттенок */
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Эффект подъема вправо при наведении */
+.footer-link-accent:hover {
+    transform: translate(5px, -5px);
+    opacity: 0.8;
+}
+.footer-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 12px;
+}
+    .footer-block p, .footer-nav a {
+    /* Montserrat или Open Sans — дают более мягкое скругление букв */
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 300; /* Делаем шрифт тоньше, чтобы он не выглядел грубым */
+    line-height: 1.7; /* Увеличиваем отступы между строками */
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+    .footer-org {
+    text-transform: none; /* Убираем капс, если он был, это сразу смягчит вид */
+    font-style: italic; /* Курсив добавит «юридической» элегантности */
+    margin-bottom: 5px;
+}
+
+.footer-name {
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+}
+
+.footer-reg {
+    font-size: 13px;
+    opacity: 0.6; /* Слегка приглушаем, чтобы не перегружать блок */
+    max-width: 280px; /* Чтобы текст красиво переносился */
+}
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-gold);
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+</style>
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="container header-layout">
+
+        <div class="header-name-info">
+            <span class="college-status">Липецкая областная коллегия адвокатов</span>
+            <h1 class="advocate-fullname">Мицюк Евгений Юрьевич</h1>
+        </div>
+
+        <div class="header-contacts">
+            <div class="contact-item">
+                <i class="icon-location"></i>
+                 <li><span class="contact-text">г. Липецк, ул. Л. Толстого, д.1, офис 302</span></li>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <li><span class="contact-text">Пн — Пт, 09:00 — 19:00</span></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <a href="tel:+79315414347" class="btn-call">
+                <i class="icon-phone"></i> +7 (931) 541-43-47
+            </a>
+            <a href="#contact" class="btn-appointment">ЗАПИСАТЬСЯ</a>
+        </div>
+    </div>
+
+    <nav class="header-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#about" class="active">Об адвокате</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#prices">Цена</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <section class="about-advocate" id="about">
+    <div class="about-bg-image"></div>
+    
+    <div class="container">
+        <div class="about-content">
+            <div class="about-photo">
+                <img src="i.jpg" alt="Адвокат Мицюк Евгений Юрьевич">
+                <div class="photo-frame"></div>
+            </div>
+            
+            <div class="about-text">
+                <span class="subtitle">Ваш доверитель</span>
+                <h2>Мицюк Евгений Юрьевич</h2>
+                <p class="advocate-description">
+                    Адвокат, член Липецкой областной коллегии. 
+                    Подполковник юстиции в запасе с 15-летним стажем в органах военной прокуратуры. 
+                    Ветеран боевых действий. Специализируется на защите прав граждан и правовом сопровождении бизнеса.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="services-section" id="services">
+    <div class="container">
+        <h2 class="section-title">Мои услуги</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Уголовное право</h3>
+                <p>Защита прав военнослужащих, мобилизованных и призывников по общеуголовным и специальным статьям (Глава 33 УК РФ):</p>
+                <ul class="service-list">
+                    <li><strong>Допроцессуальная помощь:</strong> консультирование при вызове на допрос, защита при проведении служебных проверок и оценка правовых рисков.</li>
+                    <li><strong>Предварительное следствие:</strong> выработка стратегии защиты в следственных отделах СК РФ, участие в допросах, очных ставках и обжалование меры пресечения.</li>
+                    <li><strong>Защита по специальным статьям:</strong> самовольное оставление части (ст. 337), дезертирство (ст. 338), неисполнение приказа (ст. 332), насилие в отношении начальника (ст. 334).</li>
+                    <li><strong>Судебное представительство:</strong> защита в гарнизонных и окружных судах, работа с экспертизами (ВВК, психиатрическая) и участие в прениях.</li>
+                    <li><strong>Обжалование и исполнение:</strong> апелляции, кассации вплоть до Верховного Суда РФ, помощь в вопросах УДО и снятия судимости.</li>
+                </ul>
+            </div>
+
+            <div class="service-item">
+                <h3>Административное право</h3>
+                <p>Защита повседневных прав, вопросов дисциплины и взаимодействия с госорганами:</p>
+                <ul class="service-list">
+                    <li><strong>Дисциплинарная ответственность:</strong> защита при разбирательствах по грубым проступкам (гауптвахта), обжалование незаконных взысканий и лишения надбавок.</li>
+                    <li><strong>Прохождение службы:</strong> юридическое сопровождение увольнения (по здоровью, семейным обстоятельствам), перевод к новому месту службы и оспаривание решений ВВК.</li>
+                    <li><strong>Вопросы обеспечения:</strong> жилищные споры (НИС, субсидии), взыскание недоплаченного довольствия и боевых выплат, оформление страховок при ранениях.</li>
+                    <li><strong>Призыв и мобилизация:</strong> оспаривание решений призывных комиссий, защита при нарушении процедур медосвидетельствования и помощь в реализации права на АГС.</li>
+                    <li><strong>Судебная защита (КАС РФ):</strong> иски против бездействия командиров, решений аттестационных комиссий и приказов Минобороны.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-center-wrap">
+            <a href="#contact" class="btn-order">Записаться на консультацию</a>
+        </div>
+    </div>
+</section>
+
+    <section class="experience-section" id="about">
+    <div class="container">
+        <h2 class="section-title">Опыт работы и практика</h2>
+        <div class="experience-text">
+            <p>Являюсь членом Липецкой областной коллегии адвокатов. В 2010 году окончил прокурорско-следственный факультет Военного университета Министерства обороны РФ по специальности «Юриспруденция».</p>
+            
+            <p>Мой профессиональный путь включает 15 лет службы в органах военной прокуратуры. За это время я прошел путь от помощника до заместителя военного прокурора гарнизонного звена.</p>
+            
+            <p>Являюсь пенсионером органов прокуратуры РФ в звании подполковника юстиции. Имею статус ветерана боевых действий как участник специальной военной операции.</p>
+            
+            <p>Сегодня я применяю свой многолетний опыт для защиты граждан и организаций, специализируясь на комплексном юридическом сопровождении и представлении интересов в судах.</p>
+        </div>
+    </div>
+</section>
+    <section class="prices-section" id="prices">
+    <div class="container">
+        <h2 class="section-title">Стоимость услуг</h2>
+        
+        <div class="price-expert-wrap">
+            <p class="price-description">
+                Каждая ситуация в военно-правовой сфере уникальна и требует детального анализа. 
+                Я придерживаюсь прозрачной ценовой политики: стоимость юридической помощи обсуждается персонально и зависит от специфики вашей задачи.
+            </p>
+            
+            <div class="expert-badge">
+                <p>Индивидуальный расчет — гарантия честной цены за квалифицированную защиту от подполковника юстиции в запасе.</p>
+            </div>
+        </div>
+
+        <div class="button-center-wrap">
+            <a href="#contact" class="btn-order">Получить персональный расчет</a>
+        </div>
+    </div>
+</section>
+<section class="form-section" id="contact">
+    <div class="form-container">
+        <h2>Записаться на консультацию</h2>
+        
+        <form class="advokat-form" action="https://script.google.com/macros/s/AKfycby3AX87vDggHDxHiFU7uENIPTHD9cua_VN2PGm1tZIq_QV-63Etpm_PrHUK4cg7jK8/exec" method="POST">
+            <input type="text" name="name" placeholder="Ваше ФИО" required>
+            <input type="tel" name="phone" placeholder="Ваш телефон" required>
+            <input type="email" name="email" placeholder="Ваш Email">
+            <textarea name="problem" placeholder="Кратко опишите вашу проблему" rows="4"></textarea>
+            <button type="submit" class="submit-btn">ОТПРАВИТЬ ДАННЫЕ</button>
+        </form>
+
+        <div class="messenger-wrap">
+            <a href="#" class="msg-link wa">WhatsApp</a>
+            <a href="#" class="msg-link tg">Telegram</a>
+        </div>
+    </div>
+</section>
+    <script>
+  const form = document.querySelector('.advokat-form');
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Останавливаем перезагрузку страницы
+    
+    const formData = new FormData(form);
+    const button = form.querySelector('.submit-btn');
+    const originalText = button.textContent;
+    
+    button.textContent = "Отправка...";
+    button.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Если всё успешно, заменяем форму текстом
+        form.innerHTML = `<div style="text-align:center; padding: 40px;">
+                            <h3 style="color: #0033ff;">Спасибо!</h3>
+                            <p>Ваша заявка принята. Я свяжусь с вами в ближайшее время.</p>
+                          </div>`;
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      alert("Ой! Что-то пошло не так. Попробуйте еще раз.");
+      button.textContent = originalText;
+      button.disabled = false;
+    }
+  });
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        // 1. Убираем класс 'active' у всех ссылок
+        document.querySelectorAll('.nav-menu a').forEach(item => item.classList.remove('active'));
+        
+        // 2. Добавляем класс 'active' той ссылке, на которую нажали
+        this.classList.add('active');
+    });
+});
+</script>
+    <footer class="main-footer">
+    <div class="footer-divider"></div>
+    
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-block">
+                <h3 >Липецкая областная коллегия адвокатов</h3>
+                <div class="block-line"></div>
+                <p class="footer-name">Мицюк Евгений Юрьевич</p>
+                <p class="footer-reg">Регистрационный номер в Едином государственном реестре адвокатов № 48/873</p>
+            </div>
+
+            <div class="footer-block">
+                <h3>Контакты</h3>
+                <div class="block-line"></div>
+                <p class="footer-address">г. Липецк, ул. Л. Толстого, д.1, офис 302</p>
+                <a href="tel:+79315414347" class="footer-link-accent">+7 (931) 541-43-47</a>
+                <a href="mailto:mittsuk@mail.ru" class="footer-link-accent">mittsuk@mail.ru</a>
+            </div>
+
+            <div class="footer-block">
+                <h3>Информация</h3>
+                <div class="block-line"></div>
+                <ul class="footer-nav">
+                    <li><a href="#about">Об адвокате</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#prices">Цена</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Мицюк Евгений Юрьевич. Все права защищены.</p>
+            <p>Информация на сайте не является публичной офертой. Оказание юридической помощи осуществляется в соответствии с Федеральным законом "Об адвокатской деятельности и адвокатуре в Российской Федерации".</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
