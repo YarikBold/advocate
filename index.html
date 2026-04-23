@@ -620,22 +620,27 @@ section,
     .submit-btn:hover { background-color: var(--accent-gold); color: var(--bg-dark); }
 
    /* Стили только для мобильных (до 768px) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ — замени старый @media этим кодом */
 @media (max-width: 768px) {
-    header {
-        position: fixed;
+    .main-header {
+        position: fixed !important;
         top: 0;
         width: 100%;
-        height: 60px;
-        z-index: 1000;
+        height: 70px;
+        z-index: 9999;
         background: #1c2116;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     body {
-        padding-top: 60px; /* Соответствует высоте шапки */
+        padding-top: 70px; /* Отступ, чтобы контент не залез под шапку */
+    }
+
+    /* Скрываем громоздкие контакты и кнопки на телефонах */
+    .header-contacts, .header-actions, .college-status {
+        display: none !important;
     }
 
     .advocate-fullname {
@@ -643,33 +648,36 @@ section,
         white-space: nowrap;
     }
 
-    /* Скрываем контакты в шапке, оставляем их в футере */
-    .header-top-text, .header-contacts, .header-buttons {
-        display: none !important;
-    }
-
-    /* Стили для меню */
-    .nav-links {
-        display: none;
-        flex-direction: column;
+    /* Навигация превращается в выпадающий список */
+    .header-nav {
+        display: none; 
         position: absolute;
-        top: 60px;
+        top: 70px;
         left: 0;
         width: 100%;
         background: #1c2116;
-        padding: 20px;
-        border-top: 1px solid #d9a04a;
+        border-bottom: 2px solid #d9a04a;
     }
 
-    .nav-links.active {
-        display: flex;
+    .header-nav.active {
+        display: block; /* Показываем при клике */
     }
 
-    .menu-toggle {
-        display: flex;
+    .nav-menu {
         flex-direction: column;
-        gap: 4px;
+        padding: 20px;
+        gap: 15px;
+        display: flex;
+        list-style: none;
+    }
+
+    /* Стиль кнопки меню */
+    .menu-toggle {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
         cursor: pointer;
+        margin-left: auto;
     }
 
     .menu-toggle span {
@@ -677,18 +685,18 @@ section,
         height: 3px;
         background: #d9a04a;
     }
-    .hero-section {
-        height: 90vh; /* Занимает 90% высоты экрана телефона */
-        background-position: 75% center; /* Сдвигаем фото, чтобы лицо адвоката было по центру на узком экране */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
+}
 
-    .hero-section h1 {
-        font-size: 24px !important; /* Уменьшаем главный заголовок, чтобы не вылезал за края */
-    }
+/* Цвет заголовка "Мои услуги" */
+#services h2 {
+    color: #d9a04a !important;
+}
+
+/* Шрифт кнопки */
+.submit-btn, button {
+    font-family: 'Montserrat', sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
     /* Основной фон футера — как в оливковой шапке */
 .main-footer {
@@ -824,7 +832,6 @@ section,
 
     <header class="main-header">
     <div class="container header-layout">
-
         <div class="header-name-info">
             <span class="college-status">Липецкая областная коллегия адвокатов</span>
             <h1 class="advocate-fullname">Мицюк Евгений Юрьевич</h1>
@@ -832,36 +839,28 @@ section,
 
         <div class="header-contacts">
             <div class="contact-item">
-                <i class="icon-location"></i>
-                 <li><span class="contact-text">г. Липецк, ул. Л. Толстого, д.1, офис 302</span></li>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <li><span class="contact-text">Пн — Пт, 09:00 — 19:00</span></li>
-            </ul>
+                <span class="contact-text">г. Липецк, ул. Л. Толстого, д.1, офис 302</span>
             </div>
         </div>
 
         <div class="header-actions">
-            <a href="tel:+79315414347" class="btn-call">
-                <i class="icon-phone"></i> +7 (931) 541-43-47
-            </a>
+            <a href="tel:+79315414347" class="btn-call">+7 (931) 541-43-47</a>
             <a href="#contact" class="btn-appointment">ЗАПИСАТЬСЯ</a>
         </div>
-    </div>
-    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <nav class="header-nav">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#about" class="active">Об адвокате</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#prices">Цена</a></li>
-            </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+    </div>
+
+    <nav class="header-nav">
+        <ul class="nav-menu">
+            <li><a href="#about">Об адвокате</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#prices">Цена</a></li>
+        </ul>
     </nav>
 </header>
 
@@ -1018,6 +1017,11 @@ section,
         this.classList.add('active');
     });
 });
+    function toggleMenu() {
+    // Находим навигацию и переключаем ей класс active
+    const nav = document.querySelector('.header-nav');
+    nav.classList.toggle('active');
+}
 </script>
     <footer class="main-footer">
     <div class="footer-divider"></div>
