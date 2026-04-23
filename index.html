@@ -622,51 +622,70 @@ section,
    /* Стили только для мобильных (до 768px) */
 @media (max-width: 768px) {
     header {
-        position: fixed; 
+        position: fixed;
         top: 0;
-        left: 0;
         width: 100%;
+        height: 60px;
         z-index: 1000;
-        background-color: rgba(28, 33, 22, 0.95); /* Немного прозрачности добавит стиля */
-        padding: 10px 0;
-        height: 60px; /* Фиксируем высоту, чтобы знать, какой отступ делать у body */
+        background: #1c2116;
         display: flex;
+        justify-content: space-between;
         align-items: center;
+        padding: 0 20px;
     }
 
     body {
-        padding-top: 60px; /* Теперь контент не будет дергаться */
+        padding-top: 60px; /* Соответствует высоте шапки */
     }
 
-    /* ФИО делаем в одну строку и компактно */
     .advocate-fullname {
         font-size: 16px !important;
-        margin: 0 !important;
         white-space: nowrap;
     }
 
-    /* Прячем контакты и кнопки в шапке на мобилках, 
-       их лучше оставить только в самом низу сайта или в меню */
+    /* Скрываем контакты в шапке, оставляем их в футере */
     .header-top-text, .header-contacts, .header-buttons {
-        display: none !important; 
+        display: none !important;
     }
 
-    /* Показываем кнопку звонка (иконку) справа, это очень удобно */
-    .mobile-call-icon {
-        display: block;
-        margin-left: auto;
-        margin-right: 15px;
-        color: #d9a04a;
-        font-size: 20px;
+    /* Стили для меню */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #1c2116;
+        padding: 20px;
+        border-top: 1px solid #d9a04a;
     }
-}
-    @media (max-width: 768px) {
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #d9a04a;
+    }
     .hero-section {
-        height: 80vh; /* Делаем секцию высокой */
-        background-attachment: scroll; /* Отключаем фиксацию для плавности */
-        background-position: center top; /* Центрируем по адвокату */
-        background-size: cover;
+        height: 90vh; /* Занимает 90% высоты экрана телефона */
+        background-position: 75% center; /* Сдвигаем фото, чтобы лицо адвоката было по центру на узком экране */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
+
     .hero-section h1 {
         font-size: 24px !important; /* Уменьшаем главный заголовок, чтобы не вылезал за края */
     }
