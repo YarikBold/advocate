@@ -265,7 +265,9 @@ section,
         border-left: 4px solid var(--military-green); /* Тот самый военный акцент */
         transition: 0.3s;
     }
-
+    #about {
+    scroll-margin-top: 100px; /* Это создаст невидимый барьер сверху */
+}
     .service-item:hover { transform: translateY(-5px); border-left-color: var(--accent-gold); }
 
     .service-item h3 {
@@ -378,7 +380,7 @@ section,
     z-index: 1;
 }
     #prices {
-    scroll-margin-top: 160px; /* Это создаст невидимый барьер сверху */
+    scroll-margin-top: 180px; /* Это создаст невидимый барьер сверху */
 }
 /* Текстовый блок */
 .subtitle {
@@ -708,7 +710,9 @@ section,
     background: var(--accent-gold);
     margin-bottom: 20px;
 }
-
+    #services {
+    scroll-margin-top: 80px; /* Это создаст невидимый барьер сверху */
+}
 /* Акцентные ссылки (номер и почта) */
 .footer-link-accent {
     display: block;
