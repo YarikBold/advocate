@@ -621,49 +621,54 @@ section,
 
    /* Стили только для мобильных (до 768px) */
 @media (max-width: 768px) {
-    .header {
-        position: fixed; /* Фиксируем только тут */
+    header {
+        position: fixed; 
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
-        background-color: #1c2116; /* Тёмно-оливковый фон для читаемости */
-        box-shadow: 0 2px 15px rgba(0,0,0,0.4);
-        padding: 5px 0; /* Делаем её максимально узкой */
-    }
-
-    /* Добавляем отступ для контента, чтобы он не "нырял" под шапку */
-    body {
-        padding-top: 150px; /* Подбери это значение под реальную высоту шапки */
-    }
-
-    /* Делаем элементы внутри шапки еще компактнее */
-    .header-layout {
-        gap: 2px !important;
-    }
-
-    .advocate-fullname {
-        font-size: 19px !important;
-        margin: 2px 0 !important;
-    }
-
-    /* Уменьшаем иконки и текст адреса/телефона */
-    .header-top-text, .header-contacts {
-        font-size: 11px !important;
-        opacity: 0.9;
-    }
-
-    /* Кнопки "Позвонить" и "Записаться" в одну линию */
-    .header-buttons {
+        background-color: rgba(28, 33, 22, 0.95); /* Немного прозрачности добавит стиля */
+        padding: 10px 0;
+        height: 60px; /* Фиксируем высоту, чтобы знать, какой отступ делать у body */
         display: flex;
-        gap: 5px;
-        margin-top: 5px;
+        align-items: center;
     }
 
-    .btn-call, .btn-record {
-        flex: 1;
-        padding: 10px 5px !important;
-        font-size: 12px !important;
+    body {
+        padding-top: 60px; /* Теперь контент не будет дергаться */
+    }
+
+    /* ФИО делаем в одну строку и компактно */
+    .advocate-fullname {
+        font-size: 16px !important;
+        margin: 0 !important;
+        white-space: nowrap;
+    }
+
+    /* Прячем контакты и кнопки в шапке на мобилках, 
+       их лучше оставить только в самом низу сайта или в меню */
+    .header-top-text, .header-contacts, .header-buttons {
+        display: none !important; 
+    }
+
+    /* Показываем кнопку звонка (иконку) справа, это очень удобно */
+    .mobile-call-icon {
+        display: block;
+        margin-left: auto;
+        margin-right: 15px;
+        color: #d9a04a;
+        font-size: 20px;
+    }
+}
+    @media (max-width: 768px) {
+    .hero-section {
+        height: 80vh; /* Делаем секцию высокой */
+        background-attachment: scroll; /* Отключаем фиксацию для плавности */
+        background-position: center top; /* Центрируем по адвокату */
+        background-size: cover;
+    }
+    .hero-section h1 {
+        font-size: 24px !important; /* Уменьшаем главный заголовок, чтобы не вылезал за края */
     }
 }
     /* Основной фон футера — как в оливковой шапке */
