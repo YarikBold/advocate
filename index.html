@@ -498,32 +498,22 @@ section,
     .experience-section h2 {
     margin-top: 10px !important;
 }
-.experience-text {
-    text-align: justify;
-    text-justify: inter-word;
-    line-height: 1.5; /* Чуть увеличим для читаемости */
+    .experience-text p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-indent: 0 !important;   /* Убираем отступ первой строки (то, что ты просил раньше) */
+    
+    /* Выравнивание по обеим сторонам */
+    text-align: justify;         
+    text-justify: inter-word;    /* Улучшает распределение пробелов */
+    
+    /* Магия переносов, чтобы не было дыр в тексте */
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
-    color: rgba(245, 245, 245, 0.9);
-}
-
-/* Убираем отступы у параграфов внутри */
-.experience-text p {
-    margin: 0 0 10px 0 !important;
-    padding: 0 !important;
-    text-indent: 0 !important;
     
-    /* Меняем justify на left */
-    text-align: left; 
-    
-    /* Уплотняем межстрочный интервал */
-    line-height: 1.4; 
-    
-    /* Слегка прижимаем буквы друг к другу */
-    letter-spacing: -0.2px; 
-    
-    color: rgba(245, 245, 245, 0.9);
+    line-height: 1.4;            /* Комфортная плотность текста */
+    margin-bottom: 5px !important; /* Минимальный отступ между абзацами */
 }
 /* 2. ЛИНИИ ДЛЯ ВСЕХ ВЕРХНИХ БЛОКОВ (кроме цен) */
 .hero-split::after, .about-advocate::after, .services-section::after, .experience-section::after {
@@ -807,7 +797,6 @@ section,
         flex-direction: column; /* На мобилках снова в колонку */
         gap: 5px;
     }
-    
 }
 
 /* Для ПК скрываем мобильные штуки */
@@ -1037,10 +1026,6 @@ section,
             <li><a href="#prices">Стоимость услуг</a></li>
             <li class="mobile-only-item"><a href="#contact" class="btn-menu-sub">ЗАПИСАТЬСЯ</a></li>
         </ul>
-        <div class="mobile-menu-contacts">
-            <a href="tel:+79315414347" class="mobile-contact-link">+7 (931) 541-43-47</a>
-            <a href="tel:+79000000000" class="mobile-contact-link">+7 (900) 000-00-00</a>
-        </div>
     </nav>
 </header>
 
@@ -1050,7 +1035,7 @@ section,
     <div class="container">
         <div class="about-content">
             <div class="about-photo">
-                <img src="евгеша1.jpg" alt="Адвокат Мицюк Евгений Юрьевич">
+                <img src="лого.jpg" alt="Адвокат Мицюк Евгений Юрьевич">
                 <div class="photo-frame"></div>
             </div>
             
@@ -1100,7 +1085,7 @@ section,
     </div>
 </section>
 
-    <section class="experience-section">
+    <section class="experience-section" id="about">
     <div class="container">
         <h2 class="section-title">Опыт работы и практика</h2>
         <div class="experience-text">
@@ -1200,9 +1185,6 @@ section,
     // Находим навигацию и переключаем ей класс active
     const nav = document.querySelector('.header-nav');
     nav.classList.toggle('active');
-    document.getElementById('mobile-menu').addEventListener('click', function() {
-    document.querySelector('.header-nav').classList.toggle('active');
-});
 }
 </script>
     <footer class="main-footer">
@@ -1223,7 +1205,7 @@ section,
                 <p class="footer-address">г. Липецк, ул. Л. Толстого, д.1, офис 302</p>
                 <div class="footer-info-row">
                     <a href="tel:+79315414347" class="footer-link-accent">+7 (931) 541-43-47</a>
-                    <a href="tel:+74742771326" class="footer-link-accent">+7 (4742) 77-13-26</a>
+                    <a href="tel:+74742771326" class="footer-link-accent">+7 (4247) 77-13-26</a>
                 </div>
 
                 <div class="footer-info-row">
