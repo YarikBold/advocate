@@ -856,21 +856,26 @@ section,
     #about {
         padding-top: 100px; /* На мобильных шапка меньше, отступ тоже можно снизить */
     }
-    .mobile-only-nav-buttons {
-        display: flex;
+    .mobile-menu-buttons {
+        display: flex !important;
         flex-direction: column;
         gap: 15px;
         padding: 20px 0;
         width: 100%;
+        align-items: center;
     }
-    .mobile-nav-phones {
+
+    /* Колонки для телефонов */
+    .mobile-phones-column {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        width: 100%;
+        max-width: 280px;
     }
 
-    /* Стилизуем кнопки телефонов, чтобы они были во всю ширину */
-    .mobile-nav-phones .btn-call {
+    /* Стиль кнопок телефонов (золотые как на макете) */
+    .btn-call-mobile {
         background-color: #c5a059;
         color: #1c2116 !important;
         text-align: center;
@@ -878,15 +883,31 @@ section,
         border-radius: 4px;
         font-weight: 700;
         text-decoration: none;
+        font-size: 16px;
     }
 
-    /* Центрируем все элементы меню */
+    /* Стиль кнопки ЗАПИСАТЬСЯ под ними */
+    .btn-menu-sub {
+        width: 100%;
+        max-width: 280px;
+        background: transparent;
+        color: #c5a059 !important;
+        border: 1px solid #c5a059;
+        padding: 12px;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    /* Убедимся, что меню занимает всю ширину и центрирует контент */
     .nav-menu {
         align-items: center;
-        text-align: center;
+        padding: 20px;
     }
 }
-    .mobile-only-nav-buttons {
+    .mobile-menu-buttons {
     display: none;
 }
 /* Для ПК скрываем мобильные штуки */
@@ -1097,23 +1118,21 @@ section,
 </div>
     </div>
 
-    <nav class="header-nav">
-        <ul class="nav-menu">
-            <li><a href="#about">Об адвокате</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#prices">Стоимость услуг</a></li>
-            <li class="mobile-only-item"><a href="#contact" class="btn-menu-sub">ЗАПИСАТЬСЯ</a></li>
-        </ul>
+   <nav class="header-nav">
+    <ul class="nav-menu">
+        <li><a href="#about">Об адвокате</a></li>
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#prices">Стоимость услуг</a></li>
         
-        <li class="mobile-only-nav-buttons">
-            <div class="mobile-nav-phones">
-                <a href="tel:+79315414347" class="btn-call">+7 (931) 541-43-47</a>
-                <a href="tel:+74742771326" class="btn-call">+7 (4746) 77-13-26</a>
+        <li class="mobile-menu-buttons">
+            <div class="mobile-phones-column">
+                <a href="tel:+79315414347" class="btn-call-mobile">+7 (931) 541-43-47</a>
+                <a href="tel:+74742771326" class="btn-call-mobile">+7 (4746) 77-13-26</a>
             </div>
             <a href="#contact" class="btn-menu-sub">ЗАПИСАТЬСЯ</a>
         </li>
     </ul>
-    </nav>
+</nav>
 </header>
 
     <section class="about-advocate" id="about">
