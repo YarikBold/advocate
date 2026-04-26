@@ -27,7 +27,8 @@
     <meta property="og:description" content="Подполковник юстиции в запасе. 15 лет стажа в военной прокуратуре.">
     <meta property="og:image" content="i.jpg">
 
-    <link rel="icon" type="image/png" href="favicon-green.png">
+    <link rel="icon" type="image/png" href="favicon-green.ico">
+    <link rel="shortcut icon" href="favicon-green.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
@@ -811,105 +812,8 @@ section,
         flex-direction: column; /* На мобилках снова в колонку */
         gap: 5px;
     }
-    .about-content {
-        flex-direction: column; 
-        gap: 30px; /* Уменьшаем отступ между фото и текстом */
-        padding: 0 10px;
-    }
-    .about-photo {
-        max-width: 100%; /* Фото растягивается на всю ширину экрана */
-        width: 100%;
-    }
-    .about-photo img {
-        width: 100%;
-        height: auto;
-    }
-
-    /* 3. Убираем лишние рамки или отступы, которые могут мешать на узком экране */
-    .photo-frame {
-        top: -10px;
-        bottom: -10px;
-        left: -10px;
-        right: -10px;
-    }
-
-    /* 4. Центрируем текст под картинкой */
-    .about-text {
-        text-align: center;
-        max-width: 100%;
-    }
-    .about-text h2 {
-        font-size: 28px; /* Уменьшаем заголовок для мобильных */
-        margin: 0 auto 20px;
-    }
-
-    .about-text h2::after {
-        margin: 15px auto 0; /* Центрируем золотую линию под заголовком */
-    }
-
-    .about-text p {
-        font-size: 16px;
-        text-align: left; /* Текст описания лучше оставить по левому краю для читаемости */
-    }
-
-    /* Корректировка отступа всей секции */
-    #about {
-        padding-top: 100px; /* На мобильных шапка меньше, отступ тоже можно снизить */
-    }
-    .mobile-menu-buttons {
-        display: flex !important;
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 0;
-        width: 100%;
-        align-items: center;
-    }
-
-    /* Колонки для телефонов */
-    .mobile-phones-column {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        max-width: 280px;
-    }
-
-    /* Стиль кнопок телефонов (золотые как на макете) */
-    .btn-call-mobile {
-        background-color: #c5a059;
-        color: #1c2116 !important;
-        text-align: center;
-        padding: 12px;
-        border-radius: 4px;
-        font-weight: 700;
-        text-decoration: none;
-        font-size: 16px;
-    }
-
-    /* Стиль кнопки ЗАПИСАТЬСЯ под ними */
-    .btn-menu-sub {
-        width: 100%;
-        max-width: 280px;
-        background: transparent;
-        color: #c5a059 !important;
-        border: 1px solid #c5a059;
-        padding: 12px;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 4px;
-        text-transform: uppercase;
-        font-size: 14px;
-    }
-    
-    /* Убедимся, что меню занимает всю ширину и центрирует контент */
-    .nav-menu {
-        align-items: center;
-        padding: 20px;
-    }
 }
-    .mobile-menu-buttons {
-    display: none;
-}
+
 /* Для ПК скрываем мобильные штуки */
 .header-mobile-right, .mobile-only-item { display: none; }
 
@@ -1118,21 +1022,14 @@ section,
 </div>
     </div>
 
-   <nav class="header-nav">
-    <ul class="nav-menu">
-        <li><a href="#about">Об адвокате</a></li>
-        <li><a href="#services">Услуги</a></li>
-        <li><a href="#prices">Стоимость услуг</a></li>
-        
-        <li class="mobile-menu-buttons">
-            <div class="mobile-phones-column">
-                <a href="tel:+79315414347" class="btn-call-mobile">+7 (931) 541-43-47</a>
-                <a href="tel:+74742771326" class="btn-call-mobile">+7 (4746) 77-13-26</a>
-            </div>
-            <a href="#contact" class="btn-menu-sub">ЗАПИСАТЬСЯ</a>
-        </li>
-    </ul>
-</nav>
+    <nav class="header-nav">
+        <ul class="nav-menu">
+            <li><a href="#about">Об адвокате</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#prices">Стоимость услуг</a></li>
+            <li class="mobile-only-item"><a href="#contact" class="btn-menu-sub">ЗАПИСАТЬСЯ</a></li>
+        </ul>
+    </nav>
 </header>
 
     <section class="about-advocate" id="about">
