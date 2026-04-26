@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://военный-адвокат-липецк.рф/sitemap.xml
+Sitemap: https://xn----8sbbicmjuasf6atccdp6m.xn--p1ai/sitemap.xml
